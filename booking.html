@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan - Griya Kolektiva</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Griya Kolektiva</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="rooms.html">Kamar</a></li>
+                <li><a href="booking.html" aria-current="page">Pemesanan</a></li>
+                <li><a href="admin_login.php">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="booking-section">
+            <h2>Form Pemesanan</h2>
+            <form id="bookingForm" method="POST" action="process_booking.php">
+                <div class="form-group">
+                    <label for="guest_name">Nama Lengkap:</label>
+                    <input type="text" id="guest_name" name="guest_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="guest_email">Email:</label>
+                    <input type="email" id="guest_email" name="guest_email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="guest_phone">Nomor Telepon:</label>
+                    <input type="tel" id="guest_phone" name="guest_phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="room_type">Tipe Kamar:</label>
+                    <select id="room_type" name="room_type" required>
+                        <option value="">Pilih Tipe Kamar</option>
+                        <option value="ruang-kendali" data-price="190000" data-available="1">Ruang Kendali (1 kamar tersedia) - Rp 190.000/malam</option>
+                        <option value="kamar-ilusi" data-price="110000" data-available="4">Kamar Ilusi (4 kamar tersedia) - Rp 110.000/malam</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkin_date">Tanggal Check-in:</label>
+                    <input type="date" id="checkin_date" name="checkin_date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkout_date">Tanggal Check-out:</label>
+                    <input type="date" id="checkout_date" name="checkout_date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="total_guests">Jumlah Tamu:</label>
+                    <input type="number" id="total_guests" name="total_guests" min="1" max="4" value="1" required>
+                </div>
+
+                <div class="price-summary" id="priceSummary" style="display: none;">
+                    <h3>Ringkasan Biaya</h3>
+                    <div class="summary-item">
+                        <span>Harga per malam:</span>
+                        <span id="pricePerNight">Rp 0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Jumlah malam:</span>
+                        <span id="totalNights">0</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>Total:</span>
+                        <span id="totalPrice">Rp 0</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Lanjut ke Pembayaran</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('checkin_date').min = today;
+        document.getElementById('checkout_date').min = today;
+
+        // Calculate price when inputs change
+        const form = document.getElementById('bookingForm');
+        const roomSelect = document.getElementById('room_type');
+        const checkinInput = document.getElementById('checkin_date');
+        const checkoutInput = document.getElementById('checkout_date');
+        const priceSummary = document.getElementById('priceSummary');
+        const pricePerNightSpan = document.getElementById('pricePerNight');
+        const totalNightsSpan = document.getElementById('totalNights');
+        const totalPriceSpan = document.getElementById('totalPrice');
+
+        function calculatePrice() {
+            if (roomSelect.value && checkinInput.value && checkoutInput.value) {
+                const pricePerNight = parseInt(roomSelect.selectedOptions[0].dataset.price);
+                const checkin = new Date(checkinInput.value);
+                const checkout = new Date(checkoutInput.value);
+                const nights = Math.ceil((checkout - checkin) / (1000 * 60 * 60 * 24));
+
+                if (nights > 0) {
+                    const totalPrice = pricePerNight * nights;
+                    pricePerNightSpan.textContent = `Rp ${pricePerNight.toLocaleString('id-ID')}`;
+                    totalNightsSpan.textContent = nights;
+                    totalPriceSpan.textContent = `Rp ${totalPrice.toLocaleString('id-ID')}`;
+                    priceSummary.style.display = 'block';
+                }
+            }
+        }
+
+        roomSelect.addEventListener('change', calculatePrice);
+        checkinInput.addEventListener('change', calculatePrice);
+        checkoutInput.addEventListener('change', calculatePrice);
+
+        // Validate checkout date is after checkin date
+        checkoutInput.addEventListener('change', function() {
+            const checkin = new Date(checkinInput.value);
+            const checkout = new Date(this.value);
+            
+            if (checkout <= checkin) {
+                alert('Tanggal check-out harus setelah tanggal check-in');
+                this.value = '';
+                calculatePrice();
+            }
+        });
+
+        // Update checkout min date when checkin date changes
+        checkinInput.addEventListener('change', function() {
+            checkoutInput.min = this.value;
+            if (checkoutInput.value && new Date(checkoutInput.value) <= new Date(this.value)) {
+                checkoutInput.value = '';
+                calculatePrice();
+            }
+        });
+
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            const checkin = new Date(checkinInput.value);
+            const checkout = new Date(checkoutInput.value);
+            
+            if (checkout <= checkin) {
+                e.preventDefault();
+                alert('Tanggal check-out harus setelah tanggal check-in');
+                return;
+            }
+        });
+    </script>
+</body>
+</html>
