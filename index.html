@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Griya Kolektiva - Beranda</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="scripts.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Griya Kolektiva</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" aria-current="page">Beranda</a></li>
+                <li><a href="rooms.html">Kamar</a></li>
+                <li><a href="booking.html">Pemesanan</a></li>
+                <!-- Removed Pembayaran from navbar as per feedback -->
+                <li><a href="admin_login.php">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section" aria-label="Hero Section">
+            <div class="hero-image"></div>
+            <div class="hero-content">
+                <h2>Selamat Datang di Griya Kolektiva</h2>
+                <p>Temukan kamar penginapan dengan suasana seni yang unik dan nyaman.</p>
+            </div>
+        </section>
+
+        <section class="search-room">
+            <h2>Cari Kamar Tersedia</h2>
+            <form id="searchForm">
+                <label for="checkin">Tanggal Check-in:</label>
+                <input type="date" id="checkin" name="checkin" required />
+                <label for="checkout">Tanggal Check-out:</label>
+                <input type="date" id="checkout" name="checkout" required />
+                <button type="submit">Cari</button>
+            </form>
+            <div id="searchResults"></div>
+        </section>
+
+        <section class="featured-rooms">
+            <h2>Kamar Kami</h2>
+            <div class="room-cards">
+                <article class="room-card">
+                    <div class="image-placeholder" aria-label="Foto Kamar Ilusi"></div>
+                    <h3>Kamar Ilusi</h3>
+                    <p>Harga: Rp 110.000 per malam</p>
+                </article>
+                <article class="room-card">
+                    <div class="image-placeholder" aria-label="Foto Ruang Kendali"></div>
+                    <h3>Ruang Kendali</h3>
+                    <p>Harga: Rp 190.000 per malam</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <address>
+            <p><strong>Alamat:</strong> Jl. Swasembada Barat XIII Tanjung Priok, Jakarta 14320, Indonesia</p>
+            <p><strong>Email:</strong> <a href="mailto:info@griyakolektiva.com">info@griyakolektiva.com</a></p>
+            <p><strong>Telepon:</strong> <a href="tel:+622123456789">+62 21 2345 6789</a></p>
+        </address>
+    </footer>
+</body>
+</html>
