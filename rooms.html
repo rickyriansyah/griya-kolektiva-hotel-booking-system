@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Griya Kolektiva - Kamar</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Griya Kolektiva</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="rooms.html" aria-current="page">Kamar</a></li>
+                <li><a href="booking.html">Pemesanan</a></li>
+                <li><a href="admin_login.php">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="rooms-list">
+            <h2>Daftar Kamar</h2>
+            <div class="room-cards">
+                <article class="room-card">
+                    <div class="image-placeholder" aria-label="Foto Kamar Ilusi"></div>
+                    <div class="room-info">
+                        <h3>Kamar Ilusi</h3>
+                        <p class="room-price">Rp 110.000 per malam</p>
+                        <p class="room-description">Kamar dengan tema seni yang unik, memberikan pengalaman menginap yang berbeda.</p>
+                        <ul class="room-features">
+                            <li>1 Kamar Tersedia</li>
+                            <li>AC</li>
+                            <li>TV LED</li>
+                            <li>Kamar Mandi Dalam</li>
+                        </ul>
+                        <a href="booking.html?room=1" class="book-now-btn">Pesan Sekarang</a>
+                    </div>
+                </article>
+
+                <article class="room-card">
+                    <div class="image-placeholder" aria-label="Foto Ruang Kendali"></div>
+                    <div class="room-info">
+                        <h3>Ruang Kendali</h3>
+                        <p class="room-price">Rp 190.000 per malam</p>
+                        <p class="room-description">Kamar dengan fasilitas lengkap dan nyaman, cocok untuk keluarga atau grup.</p>
+                        <ul class="room-features">
+                            <li>4 Kamar Tersedia</li>
+                            <li>AC</li>
+                            <li>TV LED</li>
+                            <li>Kamar Mandi Dalam</li>
+                            <li>Mini Refrigerator</li>
+                        </ul>
+                        <a href="booking.html?room=2" class="book-now-btn">Pesan Sekarang</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <address>
+            <p><strong>Alamat:</strong> Jl. Swasembada Barat XIII Tanjung Priok, Jakarta 14320, Indonesia</p>
+            <p><strong>Email:</strong> <a href="mailto:info@griyakolektiva.com">info@griyakolektiva.com</a></p>
+            <p><strong>Telepon:</strong> <a href="tel:+622123456789">+62 21 2345 6789</a></p>
+        </address>
+    </footer>
+</body>
+</html>
