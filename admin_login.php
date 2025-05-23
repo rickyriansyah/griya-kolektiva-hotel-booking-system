@@ -37,16 +37,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <header>
-        <h1>Griya Kolektiva</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="rooms.html">Kamar</a></li>
-                <li><a href="booking.html">Pemesanan</a></li>
-                <li><a href="admin_login.php" aria-current="page">Admin</a></li>
-            </ul>
-        </nav>
-    </header>
+    <h1>Griya Kolektiva</h1>
+    <!-- Hamburger Icon (visible on mobile) -->
+    <div class="menu-toggle" id="menuToggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <nav>
+        <ul id="menu">
+            <li><a href="index.html" aria-current="page">Beranda</a></li>
+            <li><a href="rooms.html">Kamar</a></li>
+            <li><a href="booking.html">Pemesanan</a></li>
+            <li><a href="admin_login.php">Admin</a></li>
+        </ul>
+    </nav>
+</header>
 
     <main>
         <section class="admin-login">
@@ -71,9 +78,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <footer>
         <address>
             <p><strong>Alamat:</strong> Jl. Swasembada Barat XIII Tanjung Priok, Jakarta 14320, Indonesia</p>
-            <p><strong>Email:</strong> <a href="mailto:info@griyakolektiva.com">info@griyakolektiva.com</a></p>
-            <p><strong>Telepon:</strong> <a href="tel:+622123456789">+62 21 2345 6789</a></p>
+            <p><strong>Email:</strong> <a href="mailto:griya.kolektiva@gmail.com">griya.kolektiva@gmail.com</a></p>
+            <p><strong>Telepon:</strong> <a href="tel:+6285819534878">+62 858 1953 4878</a></p>
         </address>
     </footer>
+    <script src="navbarHamburger.js"></script>
 </body>
 </html>

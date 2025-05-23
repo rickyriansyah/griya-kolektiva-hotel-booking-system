@@ -9,62 +9,121 @@
 </head>
 <body>
     <header>
-        <h1>Griya Kolektiva</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html" aria-current="page">Beranda</a></li>
-                <li><a href="rooms.html">Kamar</a></li>
-                <li><a href="booking.html">Pemesanan</a></li>
-                <!-- Removed Pembayaran from navbar as per feedback -->
-                <li><a href="admin_login.php">Admin</a></li>
-            </ul>
-        </nav>
-    </header>
+    <h1>Griya Kolektiva</h1>
+    <!-- Hamburger Icon (visible on mobile) -->
+    <div class="menu-toggle" id="menuToggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <nav>
+        <ul id="menu">
+            <li><a href="index.html" aria-current="page">Beranda</a></li>
+            <li><a href="rooms.html">Kamar</a></li>
+            <li><a href="booking.html">Pemesanan</a></li>
+            <li><a href="admin_login.php">Admin</a></li>
+        </ul>
+    </nav>
+</header>
 
     <main>
         <section class="hero-section" aria-label="Hero Section">
-            <div class="hero-image"></div>
+            <img src="./image/poster/pic-hero.png" alt="Hero Image" class="hero-image" />
             <div class="hero-content">
                 <h2>Selamat Datang di Griya Kolektiva</h2>
-                <p>Temukan kamar penginapan dengan suasana seni yang unik dan nyaman.</p>
+                <p>Sederhana Seperti Di Rumah Nenek</p>
             </div>
         </section>
 
         <section class="search-room">
-            <h2>Cari Kamar Tersedia</h2>
+            <div class="search-container">
             <form id="searchForm">
                 <label for="checkin">Tanggal Check-in:</label>
                 <input type="date" id="checkin" name="checkin" required />
                 <label for="checkout">Tanggal Check-out:</label>
                 <input type="date" id="checkout" name="checkout" required />
-                <button type="submit">Cari</button>
+                <button type="submit">Cari Kamar</button>
             </form>
             <div id="searchResults"></div>
-        </section>
-
-        <section class="featured-rooms">
-            <h2>Kamar Kami</h2>
-            <div class="room-cards">
-                <article class="room-card">
-                    <div class="image-placeholder" aria-label="Foto Kamar Ilusi"></div>
-                    <h3>Kamar Ilusi</h3>
-                    <p>Harga: Rp 110.000 per malam</p>
-                </article>
-                <article class="room-card">
-                    <div class="image-placeholder" aria-label="Foto Ruang Kendali"></div>
-                    <h3>Ruang Kendali</h3>
-                    <p>Harga: Rp 190.000 per malam</p>
-                </article>
             </div>
         </section>
+
+       <section class="featured-rooms">
+  <h2>Kamar Kami</h2>
+  <div class="room-cards">
+    <!-- Kamar Ilusi -->
+    <article class="room-card">
+      <div class="image-carousel">
+        <div class="slider-container">
+          <img src="./image/poster/pic-kamar-ilusi1.png" alt="Foto Kamar Ilusi" class="room-image" />
+          <img src="./image/poster/pic-kamar-ilusi2.png" alt="Foto Kamar Ilusi" class="room-image" />
+          <img src="./image/poster/pic-kamar-ilusi3.png" alt="Foto Kamar Ilusi" class="room-image" />
+          <img src="./image/poster/pic-kamar-ilusi4.png" alt="Foto Kamar Ilusi" class="room-image" />
+        </div>
+        <div class="carousel-arrow prev-arrow">&#10094;</div>
+        <div class="carousel-arrow next-arrow">&#10095;</div>
+        <div class="slide-indicators">
+          <span class="indicator active"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+        </div>
+      </div>
+     <div class="room-details">
+    <h3 class="room-title">Kamar Ilusi</h3>
+    <p class="room-price">Harga: Rp 110.000 per malam</p>
+    <p class="room-description">Tempat yang tepat untuk zen dan mencari buah pikiran.</p>
+  </div>
+    </article>
+
+    <!-- Ruang Kendali -->
+    <article class="room-card">
+      <div class="image-carousel">
+        <div class="slider-container">
+          <img src="./image/poster/pic-ruang-kendali1.png" alt="Foto Ruang Kendali" class="room-image" />
+          <img src="./image/poster/pic-ruang-kendali2.png" alt="Foto Ruang Kendali" class="room-image" />
+          <img src="./image/poster/pic-ruang-kendali3.png" alt="Foto Ruang Kendali" class="room-image" />
+          <img src="./image/poster/pic-ruang-kendali4.png" alt="Foto Ruang Kendali" class="room-image" />
+          <img src="./image/poster/pic-kamar-ilusi4.png" alt="Foto Ruang Kendali" class="room-image" />
+        </div>
+        <div class="carousel-arrow prev-arrow">&#10094;</div>
+        <div class="carousel-arrow next-arrow">&#10095;</div>
+        <div class="slide-indicators">
+          <span class="indicator active"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+        </div>
+      </div class="room-details">
+      <h3 class="room-title">Ruang Kendali</h3>
+      <p class="room-price">Harga: Rp 190.000 per malam</p>
+      <p class="room-description">Sensasi menginap dengan nuansa syahdu dan kontrol penuh atas suasana.</p>
+    </article>
+  </div>
+</section>
+
+<section class="free-wifi">
+  <div class="wifi-icon">
+    <img src="./image/icon/gif-wifi.gif" alt="Wi-Fi Icon" class="wifi-image" />
+  </div>
+  <div class="wifi-details">
+    <h3>Free Wi-Fi</h3>
+    <p>Akses wi-Fi gratis untuk memudahkan aktivitas online.</p>
+  </div>
+</section>
+
     </main>
 
     <footer>
         <address>
-            <p><strong>Alamat:</strong> Jl. Swasembada Barat XIII Tanjung Priok, Jakarta 14320, Indonesia</p>
-            <p><strong>Email:</strong> <a href="mailto:info@griyakolektiva.com">info@griyakolektiva.com</a></p>
-            <p><strong>Telepon:</strong> <a href="tel:+622123456789">+62 21 2345 6789</a></p>
+            <p>Jl. Swasembada Barat XIII Tanjung Priok, Jakarta 14320, Indonesia</p>
+            <p><strong>Email:</strong> <a href="mailto:griya.kolektiva@gmail.com">griya.kolektiva@gmail.com</a></p>
+            <p><strong>Telepon:</strong> <a href="tel:+6285819534878">+62 858 1953 4878</a></p>
         </address>
     </footer>
+    <script src="carouselView.js"></script>
+    <script src="navbarHamburger.js"></script>
 </body>
 </html>

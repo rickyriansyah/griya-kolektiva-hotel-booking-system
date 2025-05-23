@@ -74,21 +74,16 @@ $booking = $_SESSION['booking_details'];
                     <div class="bank-details">
                         <div class="bank-account">
                             <p class="bank-name">Bank BCA</p>
-                            <p class="account-number">1234567890</p>
-                            <p class="account-name">PT Griya Kolektiva</p>
-                        </div>
-                        <div class="bank-account">
-                            <p class="bank-name">Bank Mandiri</p>
-                            <p class="account-number">0987654321</p>
-                            <p class="account-name">PT Griya Kolektiva</p>
+                            <p class="account-number">0073252251</p>
+                            <p class="account-name">a.n. Sadiah Samin</p>
                         </div>
                     </div>
                     <div class="payment-instructions">
                         <h4>Instruksi Pembayaran:</h4>
                         <ol>
-                            <li>Transfer sesuai dengan total pembayaran ke salah satu rekening di atas</li>
+                            <li>Transfer sesuai dengan total pembayaran ke rekening di atas</li>
                             <li>Simpan bukti transfer</li>
-                            <li>Kirim bukti transfer melalui WhatsApp ke nomor 081234567890</li>
+                            <li>Jika ada kendala, kirim bukti transfer melalui WhatsApp ke nomor 085819534878</li>
                             <li>Sertakan kode booking <?php echo $booking['booking_ref']; ?> pada pesan WhatsApp</li>
                             <li>Pembayaran akan dikonfirmasi dalam 1x24 jam</li>
                         </ol>
@@ -104,7 +99,7 @@ $booking = $_SESSION['booking_details'];
     </main>
 
     <footer>
-        <p>&copy; 2024 Griya Kolektiva</p>
+        <p>&copy; 2025 Griya Kolektiva</p>
     </footer>
 </body>
 </html>

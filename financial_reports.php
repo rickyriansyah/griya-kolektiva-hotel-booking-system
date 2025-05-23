@@ -132,7 +132,7 @@ $end_date = $_GET['end_date'] ?? date('Y-m-t');
                         <label for="end_date">Tanggal Selesai:</label>
                         <input type="date" id="end_date" name="end_date" value="<?php echo $end_date; ?>">
                     </div>
-                    <button type="submit" class="btn-filter">Filter</button>
+                    <button type="submit" class="submit-btn">Filter</button>
                 </form>
             </div>
 

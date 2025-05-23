@@ -124,8 +124,8 @@ while ($row = $bookings_result->fetch_assoc()) {
     <footer>
         <address>
             <p><strong>Alamat:</strong> Jl. Swasembada Barat XIII Tanjung Priok, Jakarta 14320, Indonesia</p>
-            <p><strong>Email:</strong> <a href="mailto:info@griyakolektiva.com">info@griyakolektiva.com</a></p>
-            <p><strong>Telepon:</strong> <a href="tel:+622123456789">+62 21 2345 6789</a></p>
+            <p><strong>Email:</strong> <a href="mailto:griya.kolektiva@gmail.com">griya.kolektiva@gmail.com</a></p>
+            <p><strong>Telepon:</strong> <a href="tel:+6285819534878">+62 858 1953 4878</a></p>
         </address>
     </footer>
 </body>
