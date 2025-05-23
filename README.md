@@ -1,5 +1,4 @@
 
-Built by https://www.blackbox.ai
 
 ---
 
@@ -63,6 +62,3 @@ griya-kolektiva/
 
 ## Authors
 - Developed by the Griya Kolektiva team.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
